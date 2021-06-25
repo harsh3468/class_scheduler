@@ -5,7 +5,7 @@ require('dotenv').config()
 
 const {getAllTeacher,createTeacher,getTeacherById,deleteTeacherById,updateTeacherById,
         getAllBatch,getBatchById,createBatch,updateBatchById,deleteBatchById,
-        getAllSchedule,getScheduleById,createSchedule,updateScheduleById,deleteScheduleById} = require('./router')
+        getAllSchedule,getScheduleById,createSchedule,updateScheduleById,deleteScheduleById} = require('./server/router')
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors());
