@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const cors = require('cors');
 require('dotenv').config()
-
+app.use(express.static("public"))
 const {getAllTeacher,createTeacher,getTeacherById,deleteTeacherById,updateTeacherById,
         getAllBatch,getBatchById,createBatch,updateBatchById,deleteBatchById,
         getAllSchedule,getScheduleById,createSchedule,updateScheduleById,deleteScheduleById} = require('./server/router')
