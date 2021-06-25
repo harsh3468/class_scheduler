@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="shortcut" href="%PUBLIC_URL%"> -->
+    <link rel="stylesheet" href="./public/styles.css" />
+    <title>Class Scheduler</title>
+  </head>
+  <body>
+    <header>
+      <h4>Class Scheduler</h4>
+      <nav>
+          <div class="search__bar"> 
+              <input type="text"
+                placeholder="search schedule"
+              />
+          </div>
+        <div class="schedule__button">
+          <a href="#fill-form">
+            Sechudle Class
+          </a>
+        </div>
+        <div>
+          <select id="calendar-view">
+              <option value="month">Month</option>
+              <option value="year">Year</option>
+              <option value="day">Day</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+    <!-- schedule form-->
+    <section class="schedule__section">
+      <div class="calendar__section">
+            <div class="calendar__month">
+                <div class="month">
+                    <div class="prev" onclick="moveDate('prev')">
+                        <span>&#10094;</span>
+                    </div>
+                    <div>
+                        <h2 id="month"></h2>
+                        <p id="date_str"></p>
+                    </div>
+                    <div class="next" onclick="moveDate('next')">
+                        <span>&#10095;</span>
+                    </div>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days">
+    
+                </div>
+            </div>
+            <!-- model for events -->
+            <div id="event-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="event-list">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fill-form" class="form__section">
+            <div class="wrapper">
+            <h1>Schedule Class</h1>
+            <div class="form-container">
+            <form id="schedule-form">
+              <div class="flex">
+                <div class="flex-item">
+                  <div class="field-container">
+                    <label for="teacher-name"
+                      >Teacher : <span class="required">*</span></label
+                    >
+                    <select name="teacher-select" 
+                    required="required" 
+                    id="teacher-name">
+                        <option value=""></option>
+                    </select>
+                    
+                  </div>
+
+                  <div class="field-container">
+                    <label for="batch-name"
+                      >Batch : <span class="required">*</span></label
+                    >
+                    <select name="batch-select" 
+                    required="required" 
+                    id="batch-name">
+                        <option value=""></option>
+                    </select>
+                  </div>
+
+                  <div class="field-container">
+                    <label for="set-date"
+                      >Date : <span class="required">*</span></label
+                    >
+                    <input
+                      type="date"
+                      name="schedule-date"
+                      id="set-date"
+                      required="required"
+                    />
+                  </div>
+                </div>
+                
+                <div class="flex-item">
+                  <div class="field-container">
+                    <label for="start-time"
+                      >Start Time : <span class="required">*</span></label
+                    >
+                    <input
+                      type="time"
+                      name="start-time"
+                      id="start-time"
+                      required="required"
+                    />
+                  </div>
+                  <div class="field-container">
+                    <label for="end-time"
+                      >End Time : <span class="required">*</span></label
+                    >
+                    <input
+                    type="time"
+                    name="end-time"
+                    id="end-time"
+                    required="required"
+                  />
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="center"><input  type="submit" value="Schedule" /></div>
+            </form>
+          </div>
+
+      <!-- add teacher and branch -->
+        <div class="wrapper">
+          <h1>Add Teacher</h1>
+          <div class="form-container">
+            <form id="teacher-form" >
+              <div class="flex">
+                <div class="flex-item">
+                  <div class="field-container">
+                    <label for="teacher-name"
+                      >Teacher : <span class="required">*</span></label
+                    >
+                    <input
+                    type="string"
+                    name="teacher-name"
+                    id="teacher-name"
+                    required="required"
+                    />
+                    </div>
+                </div>
+             </div>
+            <div class="center"><input  type="submit"  value="Add" /></div>
+            </form>
+          </div>
+        </div>
+        <div class="wrapper">
+          <h1>Add Branch</h1>
+          <div class="form-container">
+            <form id="batch-form" >
+              <div class="flex">
+                <div class="flex-item">
+                  <div class="field-container">
+                    <label for="batch-name"
+                      >Batch : <span class="required">*</span></label
+                    >
+                    <input
+                    type="string"
+                    name="batch-name"
+                    id="batch-name"
+                    required="required"
+                    />
+                  </div>
+                  
+                    </div>
+                </div>
+            </div>
+              <div class="center"><input type="submit" value="Add" /></div>
+            </form>
+          </div>
+        </div>
+    </section>
+    <script src="./public/app.js"></script>
+  </body>
+</html>
