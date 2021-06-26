@@ -234,10 +234,11 @@ li{
 }
 .calendar__flex {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 .each__calendar{
-    width:19.8955%;
+    width: 24.8%;
     border: 1px solid hsl(257, 68%, 95%) ;
 }
 .month {
