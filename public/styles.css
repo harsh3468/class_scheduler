@@ -234,6 +234,17 @@ li button:hover {
   cursor: pointer;
 }
 
+.modify__section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .calender__section {
   margin: 10px 0px 0px 25px;
   background-color: #dfe6e9;

@@ -207,7 +207,13 @@ li{
   }
 
 }
-
+.modify__section{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
 //calender
 
 .calender__section {

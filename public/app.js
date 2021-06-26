@@ -473,7 +473,7 @@ const endTime = document.querySelector("#end-time")
 const timeError = document.querySelector("#time-error")
 
 let scheduleDiv = document.querySelector(".schedule__response");
-let scheduleButton = `<input  type="submit" value="Schedule" />`
+let scheduleButton = `<input  type="submit" value="Schedule">`
 startTime.addEventListener('input',function(event){
     if(endTime.value!=""){
         let et = endTime.value.split(":");
