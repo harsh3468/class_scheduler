@@ -478,11 +478,10 @@ startTime.addEventListener('input',function(event){
     if(endTime.value!=""){
         let et = endTime.value.split(":");
         let st = startTime.value.split(":");
-        console.log(parseInt(st[0])>parseInt(et[0]))
         if(parseInt(st[0])>parseInt(et[0])){
             scheduleDiv.innerHTML = "<p style='color:red'>incorrect time interval</p>"
         }else if(parseInt(st[0])==parseInt(et[0])){
-            if(parseInt(st[1])>=parseInt(et[0])){
+            if(parseInt(st[1])>=parseInt(et[1])){
                 scheduleDiv.innerHTML = "<p style='color:red'>incorrect time interval</p>"
             }else{
                 scheduleDiv.innerHTML = scheduleButton
@@ -500,7 +499,7 @@ endTime.addEventListener('input',function(event){
         if(parseInt(st[0])>parseInt(et[0])){
             scheduleDiv.innerHTML  = "<p style='color:red'>incorrect time interval</p>"
         }else if(parseInt(st[0])==parseInt(et[0])){
-            if(parseInt(st[1])>=parseInt(et[0])){
+            if(parseInt(st[1])>=parseInt(et[1])){
                 scheduleDiv.innerHTML  = "<p style='color:red'>incorrect time interval</p>"
             }else{
                 scheduleDiv.innerHTML = scheduleButton
