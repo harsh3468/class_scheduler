@@ -50,7 +50,7 @@ header h4 {
 #calendar-view {
   width: 100%;
   padding: 15px;
-  font-size: 1rem;
+  font-size: 0.98rem;
   background-color: #ffff;
   border: 1px solid #ffff;
 }
@@ -158,7 +158,7 @@ input[type="submit"] {
 }
 
 .schedule__button a {
-  color: black;
+  color: rgb(0, 108, 255);
   text-decoration: none;
 }
 

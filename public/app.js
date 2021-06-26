@@ -163,18 +163,18 @@ const yearDateFetcher = new Date();
 
 function renderDate(viewType,events) {
     var months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
+        "JANUARY",
+        "FEBRUARY",
+        "MARCH",
+        "APRIL",
+        "MAY",
+        "JUNE",
+        "JULY",
+        "AUGUST",
+        "SEPTEMBER",
+        "OCTOBER",
+        "NOVEMBER",
+        "DECEMBER"
     ]
     if(viewType==1){
     monthDateFetcher.setDate(1);
@@ -362,13 +362,13 @@ for(let i=0;i<12;i++){
 <div class="each__month">
 </div>
 <div class="weekdays">
-    <div>Sun</div>
-    <div>Mon</div>
-    <div>Tue</div>
-    <div>Wed</div>
-    <div>Thu</div>
-    <div>Fri</div>
-    <div>Sat</div>
+<div><b>Sun</b></div>
+<div><b>Mon</b></div>
+<div><b>Tue</b></div>
+<div><b>Wed</b></div>
+<div><b>Thu</b></div>
+<div><b>Fri</b></div>
+<div><b>Sat</b></div>
 </div>
     <div class="days">
 
@@ -423,13 +423,13 @@ calenderView.addEventListener('change',function(event){
             </div>
         </div>
         <div class="weekdays">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
+        <div><b>Sun</b></div>
+        <div><b>Mon</b></div>
+        <div><b>Tue</b></div>
+        <div><b>Wed</b></div>
+        <div><b>Thu</b></div>
+        <div><b>Fri</b></div>
+        <div><b>Sat</b></div>
         </div>
         <div class="days">
 
