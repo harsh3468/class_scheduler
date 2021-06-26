@@ -1,5 +1,5 @@
 //URL
-const url = "http://localhost:3000";
+const url = "https://class-scheduler-pepcoding.herokuapp.com";
 // add teacher
 const addTeacher = document.querySelector("form[id=teacher-form]");
 addTeacher.addEventListener('submit',function(event){

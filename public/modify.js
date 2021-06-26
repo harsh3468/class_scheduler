@@ -1,4 +1,4 @@
-const url = "http://localhost:3000";
+const url = "https://class-scheduler-pepcoding.herokuapp.com";
 
 //get different field
 const teacherList = document.querySelector("#teacher-list");
@@ -42,39 +42,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 });
 
-// delete teacher
-// const deleteTeacher = document.querySelector("form[id=teacher-form]");
-// addTeacher.addEventListener('submit',function(event){
-//     event.preventDefault();
-//     const nameInput = addTeacher.querySelector("input");
-//     const data ={name:nameInput.value};
-//     nameInput.value = "";
-
-//     fetch(url+"/teacher/create",
-//     {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(data)}
-//     )
-//     .then(response=>response.json())
-//     .then((data)=>{
-//         let teacherResponse = document.querySelector(".teacher__response");
-//         const prevInnerHTML = teacherResponse.innerHTML;
-//        if(data.success){
-//            teacherResponse.innerHTML = "<div>Submitted</div>"
-
-//        }else{
-//            teacherResponse.innerHTML = "<div>Not Submitted</div>"
-//        }
-//        setTimeout(()=>{
-//         teacherResponse.innerHTML = prevInnerHTML;
-//         location.reload();
-//        },1000)
-
-//     })
-// })
 
 //delete batch
 const deleteBatch = document.querySelector("#batch-list");
