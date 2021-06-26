@@ -1,5 +1,5 @@
 //URL
-const url = "https://admiring-ardinghelli-aeb56c.netlify.app";
+const url = "https://class-scheduler-pepcoding.herokuapp.com";
 // add teacher
 const addTeacher = document.querySelector("form[id=teacher-form]");
 addTeacher.addEventListener('submit',function(event){

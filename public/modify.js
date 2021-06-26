@@ -1,4 +1,4 @@
-const url = "https://admiring-ardinghelli-aeb56c.netlify.app";
+const url = "https://class-scheduler-pepcoding.herokuapp.com";
 
 //get different field
 const teacherList = document.querySelector("#teacher-list");
