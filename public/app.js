@@ -69,6 +69,7 @@ addBatch.addEventListener('submit',function(event){
 // add schedule
 const addSchedule = document.querySelector("form[id=schedule-form]");
 addSchedule.addEventListener('submit',function(event){
+    console.log(addSchedule)
     event.preventDefault();
     const dataInput = addSchedule.querySelectorAll("input");
     const dataSelect = addSchedule.querySelectorAll("select");
@@ -472,22 +473,26 @@ const startTime = document.querySelector("#start-time")
 const endTime = document.querySelector("#end-time")
 const timeError = document.querySelector("#time-error")
 
-let scheduleDiv = document.querySelector(".schedule__response");
-let scheduleButton = `<input  type="submit" value="Schedule">`
+let scheduleDiv = document.querySelector(".schedule__response input");
+console.log(scheduleDiv)
 startTime.addEventListener('input',function(event){
     if(endTime.value!=""){
         let et = endTime.value.split(":");
         let st = startTime.value.split(":");
         if(parseInt(st[0])>parseInt(et[0])){
-            scheduleDiv.innerHTML = "<p style='color:red'>incorrect time interval</p>"
+            timeError.innerHTML = "<p style='color:red'>incorrect time interval</p>"
+            scheduleDiv.setAttribute('disabled',"true")
         }else if(parseInt(st[0])==parseInt(et[0])){
             if(parseInt(st[1])>=parseInt(et[1])){
-                scheduleDiv.innerHTML = "<p style='color:red'>incorrect time interval</p>"
+                timeError.innerHTML = "<p style='color:red'>incorrect time interval</p>"
+                scheduleDiv.setAttribute('disabled',"true")
             }else{
-                scheduleDiv.innerHTML = scheduleButton
+                timeError.innerHTML = ""
+                scheduleDiv.removeAttribute("disabled")
             }
         }else{
-            scheduleDiv.innerHTML = scheduleButton
+            timeError.innerHTML = ""
+            scheduleDiv.removeAttribute("disabled")
         }
     }
         
@@ -497,15 +502,21 @@ endTime.addEventListener('input',function(event){
         let et = endTime.value.split(":");
         let st = startTime.value.split(":");
         if(parseInt(st[0])>parseInt(et[0])){
-            scheduleDiv.innerHTML  = "<p style='color:red'>incorrect time interval</p>"
+            timeError.innerHTML  = "<p style='color:red'>incorrect time interval</p>"
+            scheduleDiv.setAttribute('disabled',"true")
+
         }else if(parseInt(st[0])==parseInt(et[0])){
             if(parseInt(st[1])>=parseInt(et[1])){
-                scheduleDiv.innerHTML  = "<p style='color:red'>incorrect time interval</p>"
+                timeError.innerHTML  = "<p style='color:red'>incorrect time interval</p>"
+                scheduleDiv.setAttribute('disabled',"true")
+
             }else{
-                scheduleDiv.innerHTML = scheduleButton
+                timeError.innerHTML = ""
+                scheduleDiv.removeAttribute("disabled")
             }
         }else{
-            scheduleDiv.innerHTML = scheduleButton
+            timeError.innerHTML = ""
+            scheduleDiv.removeAttribute("disabled")
         }
     }
 })
