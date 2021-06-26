@@ -196,6 +196,43 @@ nav {
   outline: none;
 }
 
+.time__error {
+  color: red;
+}
+
+.modify__list {
+  background-color: #ffff;
+  width: 350px;
+  height: 67vh;
+  overflow: scroll;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  -webkit-box-shadow: 4px 5px 25px #878787;
+          box-shadow: 4px 5px 25px #878787;
+}
+
+.each__list {
+  border-bottom: 1px solid #888;
+  margin: 1rem;
+}
+
+li button {
+  margin: 10px 5px;
+  background-color: #9c7ee7;
+  color: #ffff;
+  border: #9c7ee7;
+  padding: 10px;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+li button:hover {
+  -webkit-box-shadow: 5px 5px 10px #888;
+          box-shadow: 5px 5px 10px #888;
+  cursor: pointer;
+}
+
 .calender__section {
   margin: 10px 0px 0px 25px;
   background-color: #dfe6e9;

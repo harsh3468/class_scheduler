@@ -33,15 +33,33 @@ exports.updateTeacherById = (request,response)=>{
     })
 }
 exports.deleteTeacherById = (request,response)=>{
-    dbconnect.query('DELETE FROM teachers WHERE id=(?)',[request.params.id],(error,result,fields)=>{
-        if(error){
-            return response.status(304).json(error.sqlMessage);
+    deleteBatchedSchedule(request,response,async(check)=>{
+        if(check){
+            await dbconnect.query('SET FOREIGN_KEY_CHECKS=0');
+            dbconnect.query('DELETE FROM teachers WHERE teacher_id=(?)',[request.params.id],async (error,result,fields)=>{
+                await dbconnect.query('SET FOREIGN_KEY_CHECKS=1');
+                if(error){
+                    return response.status(304).json({error:error.sqlMessage});
+                }     
+                return response.status(200).json({success:result.affectedRows?true:false});
+            })
+        }else{
+            return response.status(304).json({success:check}); 
         }
-        return response.status(200).json({success:result.affectedRows?true:false});
     })
 }
 
 //batch functions
+const deleteBatchedSchedule = (request,response,callback)=>{
+   dbconnect.query('DELETE FROM schedules WHERE batch_id=(?)',[request.params.id],(error,result,fields)=>{
+        if(error){
+            return callback(false);
+        }else{
+            return callback(true);
+        }
+
+    })
+}
 
 exports.createBatch = (request,response)=>{
     dbconnect.query('INSERT INTO batches (batch_name) VALUES (?)',[request.body.name],(error,result,fields)=>{
@@ -76,11 +94,19 @@ exports.updateBatchById = (request,response)=>{
     })
 }
 exports.deleteBatchById = (request,response)=>{
-    dbconnect.query('DELETE FROM batches WHERE id=(?)',[request.params.id],(error,result,fields)=>{
-        if(error){
-            return response.status(304).json(error.sqlMessage);
+    deleteBatchedSchedule(request,response,async(check)=>{
+        if(check){
+            await dbconnect.query('SET FOREIGN_KEY_CHECKS=0');
+            dbconnect.query('DELETE FROM batches WHERE batch_id=(?)',[request.params.id],async (error,result,fields)=>{
+                await dbconnect.query('SET FOREIGN_KEY_CHECKS=1');
+                if(error){
+                    return response.status(304).json({error:error.sqlMessage});
+                }
+                    return response.status(200).json({success:result.affectedRows?true:false});
+            })
+        }else{
+            return response.status(304).json({success:check}); 
         }
-        return response.status(200).json({success:result.affectedRows?true:false});
     })
 }
 
@@ -145,10 +171,12 @@ exports.updateScheduleById = (request,response)=>{
     })
 }
 exports.deleteScheduleById = (request,response)=>{
+    console.log(request.params.id)
     dbconnect.query('DELETE FROM schedules WHERE id=(?)',[request.params.id],(error,result,fields)=>{
         if(error){
             return response.status(304).json(error.sqlMessage);
         }
+        console.log(result)
         return response.status(200).json({success:result.affectedRows?true:false});
     })
 }

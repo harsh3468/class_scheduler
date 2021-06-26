@@ -17,6 +17,11 @@
                 placeholder="Search Schedule"
               />
           </div>
+          <div class="schedule__button">
+            <a href="detailModify.html">
+              Modify Details
+            </a>
+          </div>
         <div class="schedule__button">
           <a href="#fill-form">
             Schedule Class
@@ -96,7 +101,6 @@
                     <select name="batch-select" 
                     required="required" 
                     id="batch-name">
-                        <option value=""></option>
                     </select>
                   </div>
 
@@ -135,11 +139,14 @@
                     id="end-time"
                     required="required"
                   />
+                    <div id="time-error"></div>
                     </div>
                 </div>
                 </div>
               </div>
-              <div class="center"><input  type="submit" value="Schedule" /></div>
+              <div  class="center schedule__response">
+                <input  type="submit" value="Schedule" />
+              </div>
             </form>
           </div>
 
@@ -155,7 +162,7 @@
                       >Teacher : <span class="required">*</span></label
                     >
                     <input
-                    type="string"
+                    type="text"
                     name="teacher-name"
                     id="teacher-name"
                     required="required"
@@ -163,7 +170,7 @@
                     </div>
                 </div>
              </div>
-            <div class="center"><input  type="submit"  value="Add" /></div>
+            <div class="center teacher__response"><input  type="submit"  value="Add" /></div>
             </form>
           </div>
         </div>
@@ -178,16 +185,15 @@
                       >Batch : <span class="required">*</span></label
                     >
                     <input
-                    type="string"
+                    type="text"
                     name="batch-name"
                     id="batch-name"
                     required="required"
                     />
                   </div>
-                  
                     </div>
                 </div>
-              <div class="center"><input type="submit" value="Add" /></div>
+              <div class="center batch__response"><input type="submit" value="Add" /></div>
             </form>
           </div>
         </div>

@@ -173,7 +173,39 @@ nav{
         }
     }
 }
+.time__error{
+  color: red;
+}
+//list view 
+.modify__list{
+  background-color: #ffff;
+  width: 350px;
+  height: 67vh;
+  overflow: scroll;
+  padding-top: 1rem ;
+  padding-bottom: 1rem  ;
+  padding-right: 1rem;
+  box-shadow: 4px 5px 25px hsl(0, 0%, 53%);
+}
+.each__list{
+  border-bottom: 1px solid #888;
+  margin: 1rem;
+}
+li{
+  button{
+    margin: 10px 5px;
+    background-color: hsl(257, 68%, 70%);
+    color: #ffff;
+    border: hsl(257, 68%, 70%);
+    padding: 10px;
+    transition: .1s ease-in-out;
+    &:hover{
+      box-shadow: 5px 5px 10px #888;
+      cursor: pointer;
+    }
+  }
 
+}
 
 //calender
 
