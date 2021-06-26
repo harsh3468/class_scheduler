@@ -1,8 +1,8 @@
 var mysql = require('mysql');
 var dbconnect = mysql.createConnection({
-    host: process.env.PORT,
-    port:process.env.HOST,
-    user: process.env.USER,
+    host:process.env.HOST,
+    port:process.env.PORT,
+    user:"root",
     password: process.env.PASSWORD,
     database: process.env.DATABASE
   });

@@ -2,13 +2,14 @@ const express = require('express')
 const app = express();
 const cors = require('cors');
 require('dotenv').config()
-app.use(express.static("public"))
+app.use(express.static(__dirname + '/public'));
 const {getAllTeacher,createTeacher,getTeacherById,deleteTeacherById,updateTeacherById,
         getAllBatch,getBatchById,createBatch,updateBatchById,deleteBatchById,
         getAllSchedule,getScheduleById,createSchedule,updateScheduleById,deleteScheduleById} = require('./server/router')
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors());
+
 //GET ALL TEACHER
 app.get('/teacher',getAllTeacher)
 
