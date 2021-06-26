@@ -287,7 +287,7 @@ const populateModal = (viewType)=>{
     if(!viewType){
         let selectDay = document.querySelector("div[class=days]");
         selectDay.addEventListener('click',function(event){
-            if(event.target.className != "days"){
+            if(event.target.querySelector('.popup__event')!=null){
                 const eventList = event.target.querySelector('div[class=popup__event]');
                 if(eventList!=null)
                 list.innerHTML = eventList.innerHTML;
@@ -298,7 +298,8 @@ const populateModal = (viewType)=>{
     }else{
         let selectYear = document.querySelector("div[class=calendar__year]");
         selectYear.addEventListener('click',function(event){
-            if(event.target.className != "days"&&event.target.className != "each__calendar"&&event.target.className!="calendar__flex"){
+           
+            if( event.target.querySelector('.popup__event')!=null){
                 const eventList = event.target.querySelector('div[class=popup__event]');
                 if(eventList!=null){
                 list.innerHTML = eventList.innerHTML;

@@ -42,6 +42,7 @@ header {
   font-size: 1rem;
   background-color: #ffff;
   border: 1px solid #ffff;
+  outline: none;
 }
 #calendar-view{
     width: 100%;
@@ -165,10 +166,10 @@ nav{
         border-radius: 10px;
         border: 1px solid #ffff;
         font-size: .8rem;
-        transition: .2s; 
         &:focus{
             border: 1px solid blue;
-            font-size:1rem;
+            font-size:.8rem;
+            outline: none;
         }
     }
 }
@@ -194,7 +195,8 @@ nav{
     flex-wrap: wrap;
 }
 .each__calendar{
-    width: 20%;
+    width:19.8955%;
+    border: 1px solid hsl(257, 68%, 95%) ;
 }
 .month {
   display: flex;
@@ -209,7 +211,6 @@ nav{
     padding: 40px 30px;
     text-align: center;
     background-color: hsl(257, 68%, 70%);
-    margin: 1px;
     color: #fff;
 }
 .year {
@@ -225,7 +226,6 @@ nav{
   background-color: hsl(257, 68%, 65%);
   color: #fff;
   padding: 7px 0;
-  margin: 1px;
   display: flex;
 }
 
