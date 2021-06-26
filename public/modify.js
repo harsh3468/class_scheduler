@@ -30,11 +30,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     .then((data) => {
       let list = "";
       data.forEach((element) => {
-        list += `<li class="each__list" key=${element.id}>${
-          element.teacher_name
-        } ${element.batch_name} ${element.start_time}  ${
-          element.end_time
-        } ${new Date(
+        list += `<li class="each__list" key=${element.id}>
+        Faculty
+        ${element.teacher_name}
+        will teach 
+        ${element.batch_name} 
+        start at
+        ${element.start_time}  
+        end at
+        ${element.end_time
+        } 
+        on
+        ${new Date(
           element.date
         ).toDateString()} <br/> <button> Delete</button></li>`;
       });
