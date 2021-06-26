@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-$fontColor: #ffff;
-$titleSize: "";
-$paragraphSize: "";
-$backgroundColor: "";
+
 
 :root {
   margin: 0;
@@ -23,7 +20,7 @@ header {
   justify-content: space-between;
   background-color: hsl(257, 68%, 70%);
   h4 {
-    color: $fontColor;
+    color: #ffff;
     font-size: 1.3rem;
   }
 }
@@ -47,6 +44,7 @@ header {
 #calendar-view{
     width: 100%;
     padding: 15px;
+    color: hsl(257, 68%, 45%);
     font-size: 1rem;
     background-color: #ffff;
     border: 1px solid #ffff;
@@ -143,7 +141,7 @@ input[type="submit"] {
     margin-right:5px ;
     transition: .5s;
     a{
-        color: black;
+        color: hsl(257, 68%, 45%);
         text-decoration: none;
     }
     &:hover{
