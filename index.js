@@ -57,6 +57,6 @@ app.put('/schedule/update/:id',updateScheduleById)
 //DELETE SCHEDULE
 app.delete('/schedule/delete/:id',deleteScheduleById)
 
-app.listen(3000,()=>{
-    console.log(3000+" active")
+app.listen(process.env.PORT,()=>{
+    console.log("live")
 })
